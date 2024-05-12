@@ -1,0 +1,41 @@
+
+
+
+
+
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="vendorcontainer">
+<div class="card1" style="width: 18rem;">
+  <div class="card-header">
+    <b><U>VENDOR PERFORMANCE</U>  </b>
+  </div>
+  <ul class="list-group list-group-flush">
+      <li class="list-group-item"> <b>Vendor name</b>: {{ vendor.name }}</li>
+      {% if on_time_delivery_rate is not None %}
+           <li class="list-group-item">  On-Time Delivery Rate:{{ avg_quality_rating }}</li>
+      {% else %}
+            <li class="list-group-item">  On-Time Delivery Rate:ORDER PENDING</li>
+      {% endif %}
+
+
+       {% if avg_quality_rating is not None %}
+                <li class="list-group-item">  Quality Rating Average:: {{ on_time_delivery_rate }}</li>
+      {% else %}
+                <li class="list-group-item">   Quality Rating Average:ORDER PENDING</li>
+      {% endif %}
+
+
+
+
+    <li class="list-group-item"> Fulfilment Rate:: {{ fulfilment }}</li>
+    <li class="list-group-item">Average Response Time:: {{ avg_acknowledgment}}</li>
+
+  </ul>
+
+</div>
+    </div>
+
+ <center> <a  href="{% url 'venapp:list' %}"><button  class="btn btn-primary" type="button">  Back </button></a></center></p>
+{% endblock %}

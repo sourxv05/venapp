@@ -1,0 +1,65 @@
+
+{% extends 'newbase.html' %}
+
+{% block body %}
+
+<div class="registration-container">
+        <h2>ADD VENDOR</h2>
+        <form action="" method="POST">
+
+             {% csrf_token %}
+
+            <div class="form-group">
+                <label for="username">USERNAME</label>
+                <input type="text" id="username" name="name" required placeholder="">
+            </div>
+
+            <div class="form-group">
+                <label for="address">ADDRESS</label>
+                <input type="text" id="" name="address" required placeholder="">
+            </div>
+
+            <div class="form-group">
+                <label for="phone">PHONE</label>
+                <input type="number" id="" name="phone" required placeholder="">
+            </div>
+
+            <div class="form-group">
+                <label for="email">EMAIL</label>
+                <input type="email" id="" name="email" required placeholder="">
+            </div>
+             <div class="form-group">
+                <label for="code">UNIQUE CODE</label>
+                <input type="text" id="" name="code" required placeholder="">
+            </div>
+
+             <button class="btn btn-warning"  href=" "type="submit">Submit</button>
+        </form>
+    </div>
+
+<center> <a  href="{% url 'venapp:index1' %}"><button  class="btn btn-primary" type="button">  Back </button></a></center></p>
+
+  </div>
+
+
+
+
+{% endblock %}
+<!--<form method="POST" enctype="multipart/form-data">-->
+<!--    {% csrf_token %}-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,42 @@
+{% extends 'newbase1.html' %}
+
+{% block body %}
+<div class="container" >
+    <table class="table">
+  <thead>
+    <tr>
+       <th scope="col"> </th>
+      <th scope="col"> NAME</th>
+      <th scope="col">UNIQUE CODE</th>
+
+
+    </tr>
+  </thead>
+  <tbody>
+ {% for i in v_list %}
+    <tr>
+
+        <th scope="row">*</th>
+      <td scope="row">{{i.name}}</td>
+
+      <td scope="row">{{i.code}}
+
+          <p><a href="{% url 'venapp:details' i.id %}" <button type="button" class="btn btn-outline-success"> view profile</button></a></p>
+           <p><a href="{% url 'venapp:on_time_delivery_rate_view' i.id %}" <button type="button" class="btn btn-outline-success"> view performance </button></a></p>
+
+            </a></p>
+      </td>
+
+
+
+    </tr>
+ {% endfor %}
+  </tbody>
+</table>
+
+
+</div>
+<div class="back">
+<p><center> <a  href="{% url 'venapp:index1' %}"><button  class="btn btn-primary" type="button">  Back </button></a></center></p>
+</div>
+{% endblock %}

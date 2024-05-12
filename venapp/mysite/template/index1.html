@@ -1,0 +1,62 @@
+{% extends 'newbase.html' %}
+
+{% block body %}
+
+<div class="about2">
+ <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="container-fluid">
+              <div class="row">
+
+                  <div class="detail-box">
+                    <h1>
+
+                        <U><h3 style="color: green"><B>VENDOR </B>MANAGEMENT APP</h3></U>
+                    </h1>
+                    <p class="sckl">
+                        <h6>VENAPP</h6>
+                    </p>
+<!--                       <button class="btn0">About Us</button>-->
+
+                  </div>
+                    <div class="row1">
+                                 <div class="column">
+                                    <div class="card">
+                                      <h3>VENDOR MANAGEMENT</h3>
+                                      <p><a href="{% url 'venapp:list' %}" ><button type="button" class="btn btn-outline-success">    >>>    </button></a></p>
+                                    </div>
+                                  </div>
+
+                                  <div class="column">
+                                    <div class="card">
+                                      <h3>PURCHASE ORDER MANAGEMENT
+                                      </h3>
+                                      <p><a href="  {% url 'venapp:list_orders' %}"> <button type="button" class="btn btn-outline-success"> >>></button></a></p>
+                                    </div>
+                                  </div>
+
+                                     <div class="column">
+                                    <div class="card">
+                                      <h3>ADD <br> VENDOR
+                                      </h3>
+                                      <p><a href="{% url 'venapp:index' %}"> <button type="button" class="btn btn-outline-success"> +</button></a></p>
+                                    </div>
+                                  </div>
+                        <div class="column">
+                                    <div class="card">
+                                      <h3> ADD <br>ORDERS
+                                      </h3>
+                                        <p><a href="{% url 'venapp:po' %}" ><button type="button" class="btn btn-outline-success"> +</button></a></p>
+                                    </div>
+                                  </div>
+
+                        </div>
+
+              </div>
+              </div>
+            </div>
+          </div>
+ </div>
+
+{% endblock %}
+{% url 'venapp:list' %}

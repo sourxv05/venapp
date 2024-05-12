@@ -1,0 +1,73 @@
+ {% extends 'base.html' %}
+
+{% block body %}
+
+<form method="GET">
+        <label for="vendor">Filter by Vendor:</label>
+        <select name="vendor" id="vendor" onchange="this.form.submit()">
+            <option value="">Select vender</option>
+            {% for vendor in vendors %}
+                <option
+                    value="{{ vendor.id }}"
+                    {% if vendor.id == selected_vendor %}selected{% endif %}
+                >
+                    {{ vendor.name }}
+                </option>
+            {% endfor %}
+        </select>
+    </form>
+<table class="table">
+  <thead>
+    <tr>
+       <th scope="col"> </th>
+      <th scope="col"> PO Number</th>
+      <th scope="col">Vendor Name</th>
+      <th scope="col">Status </th>
+
+    </tr>
+  </thead>
+  <tbody>
+  {% for po in purchase_orders %}
+    <tr>
+
+        <th scope="row">*</th>
+      <td scope="row">{{ po.po_number }}</td>
+      <td scope="row">{{ po.vendor.name }}</td>
+      <td scope="row">{{ po.status }}
+          <p><a href="{% url 'venapp:orderdetail' po.id %}" class="btn btn-info">ORDER DETAILS</a></p>
+
+      </td>
+
+
+
+    </tr>
+ {% endfor %}
+  </tbody>
+</table>
+
+
+<p><center><a  href="{% url 'venapp:po' %}"><button type="button" class="btn btn-outline-success">  ADD ORDER </button></a>&nbsp; <a  href="{% url 'venapp:index1' %}"><button  class="btn btn-primary" type="button">  Back </button></a></center></p>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+<!--    <ul>-->
+<!--        {% for po in purchase_orders %}-->
+<!--            <li>-->
+<!--                PO Number: {{ po.po_number }},-->
+<!--               <br> Vendor: {{ po.vendor.name }}, <br>Order Date: {{ po.order_date }}-->
+<!--                <a href="{% url 'venapp:orderdetail' po.id %}" class="btn btn-primary">View profile</a>-->
+<!--            </li>-->
+<!--        {% endfor %}-->
+<!--    </ul>-->
+
+<!--<p> <a  href="{% url 'venapp:index' %}"><button  class="btn btn-warning" type="button">back</button></a></center></p>-->
+<!--</body>-->
+<!--</html>-->

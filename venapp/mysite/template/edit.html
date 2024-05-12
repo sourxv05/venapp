@@ -1,0 +1,46 @@
+
+
+{% extends 'newbase.html' %}
+
+{% block body %}
+
+<div class="registration-container">
+        <h2>ADD VENDOR</h2>
+        <form action="" method="POST">
+
+             {% csrf_token %}
+
+            <div class="form-group">
+                <label for="username">USERNAME</label>
+                <input type="text" id="username" name="name" value="{{ instance.name }}">
+            </div>
+
+            <div class="form-group">
+                <label for="address">ADDRESS</label>
+                <input type="text" id="" name="address" value="{{ instance.address }}">
+            </div>
+
+            <div class="form-group">
+                <label for="phone">PHONE</label>
+                <input type="number" id="" name="phone" value="{{ instance.phone }}">
+            </div>
+
+            <div class="form-group">
+                <label for="email">EMAIL</label>
+                <input type="email" id="" name="email" required placeholder=""value="{{ instance.email }}">
+            </div>
+             <div class="form-group">
+                <label for="code">UNIQUE CODE</label>
+                <input type="text" id="" name="code" value="{{ instance.code }}">
+            </div>
+
+           <input type="submit" value="Save">
+        </form>
+    </div>
+
+  </div>
+
+
+
+
+{% endblock %}

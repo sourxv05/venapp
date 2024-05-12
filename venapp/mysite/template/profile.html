@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="vendorcontainer">
+<div class="card1" style="width: 18rem;">
+  <div class="card-header">
+      <b><U>VENDOR PROFILE</U></b>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Name:{{detail.name}}</li>
+    <li class="list-group-item">Address:{{detail.address}}</li>
+    <li class="list-group-item">Phone:{{detail.phone}}</li>
+     <li class="list-group-item">E mail:{{detail.email}}</li>
+      <li class="list-group-item">Unique code:{{detail.code}}</li>
+
+
+  </ul>
+    <table>
+            <tr>
+
+               <td> <a  class="btn btn-danger" href="{% url 'venapp:delete' detail.id %}">DELETE</a></td>
+                <td> <a  class="btn btn-success" href="{% url 'venapp:edit' detail.id %}">UPDATE</a></td>
+            </tr>
+            </table>
+
+</div>
+    </div>
+
+ <center> <a  href="{% url 'venapp:list' %}"><button  class="btn btn-primary" type="button">  Back </button></a></center></p>
+{% endblock %}

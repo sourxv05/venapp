@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="vendorcontainer">
+<div class="card1" style="width: 18rem;">
+  <div class="card-header">
+      <b><u>ORDER DETAIL</u></b>
+  </div>
+  <ul class="list-group list-group-flush">
+      <li class="list-group-item"><b>Po
+          number</b> :       {{od.po_number}}</li>
+
+      <li class="list-group-item"><b>Vendor Name</b>:   {{od.vendor}}</li>
+      <li class="list-group-item"><b>Order date</b>:{{od.od}}</li>
+       <li class="list-group-item"><b>delivery date</b>:{{od.dd}}</li>
+      <li class="list-group-item"><b>Items</b>:{{od.items}}</li>
+      <li class="list-group-item"><b>Quantity</b>:{{od.quantitye}}</li>
+      <li class="list-group-item"><b>Status</b>:{{od.status}}</li>
+      <li class="list-group-item"><b>Quality_rating</b>:{{od.quality_rating}}</li>
+      <li class="list-group-item"><b>Issue_date</b>:{{od.issue_date}}</li>
+ <li class="list-group-item"><b>Acknowledgment_date</b>:{{od.acknowledgment_date}}</li>
+
+
+  <li>
+    <table>
+        <tr>
+            <td>
+               <a  button type="button" class="btn btn-outline-success" href="{% url 'venapp:updateorder' od.id %}">UPDATE</a>
+
+            </td>
+            <td>
+                <a  button type="button" class="btn btn-outline-danger" href="{% url 'venapp:delete_order' od.id %}">DELETE</a>
+            </td>
+        </tr>
+    </table>
+      </li>
+       </ul>
+</div>
+</div>
+<p><center> <a  href="{% url 'venapp:list_orders' %}"><button type="button" class="btn btn-outline-success">  Back </button></a></center></p>
+
+{% endblock %}

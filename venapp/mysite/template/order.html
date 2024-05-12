@@ -1,0 +1,168 @@
+
+{% extends 'newbase.html' %}
+
+{% block body %}
+
+<div class="registration-container">
+    <h2><u>ADD PURCHASE ORDER</u></h2>
+
+    <form method="POST" enctype="multipart/form-data">
+
+             {% csrf_token %}
+
+            <div class="form-group">
+                <label for="po_number">ORDER NO</label>
+                <input type="text" id="username" name="po_number" required placeholder="">
+            </div>
+
+            <div class="form-group">
+                <label for="vendor">VENDOR NAME</label>
+                 <select name="vendor" id=" ">
+               {% for vendor in vendors %}
+                <option value="{{ vendor.id }}">{{ vendor.name }}</option>
+               {% endfor %}
+               </select>
+            </div>
+
+            <div class="form-group">
+                <label for="order_date">ORDER DATE</label>
+                <input type="date" id="password" name="od" required placeholder="">
+            </div>
+
+            <div class="form-group">
+                <label for="delevery_date">DELIVERY DATE</label>
+                <input type="date" id="confirm-password" name="dd" required placeholder="">
+            </div>
+             <div class="form-group">
+                <label for="items">ITEMS</label>
+                <input type="text" id="" name="items" required placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="quantitye">QUANTITY</label>
+                <input type="number" id="" name="quantitye" required placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="status">STATUS</label>
+                <input type="text" id="" name="status" required placeholder=""  value="pending" >
+            </div>
+            <div class="form-group">
+                <label for="quality_rating">QUALITY_RATING</label>
+                <input type="number" id="" name="quality_rating" required placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="issue_date">ISSUE DATE</label>
+                <input type="date" id="" name="issue_date" required placeholder="" value=">
+            </div>
+            <div class="form-group">
+                <label for="acknowledgment_date">ACKNOWLEDGMEBT DATE</label>
+                <input type="date" id="" name="acknowledgment_date" required placeholder="">
+            </div>
+             <button class="btn1 btn-warning"  href=" "type="submit">Submit</button>
+        </form>
+    </div>
+<center> <a  href="{% url 'venapp:index1' %}"><button  class="btn btn-primary" type="button">  Back </button></a></center></p>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<form method="POST" enctype="multipart/form-data">-->
+<!--    {% csrf_token %}-->
+
+<!--    <div class="container">-->
+<!--       <h2> order</h2><br>-->
+<!--      <table>-->
+<!--   <tr>-->
+<!--       <td><label for="order_no"><b>Po number</b></label></td>-->
+<!--        <td><input type="text" placeholder="E" name="po_number" ></td><br>-->
+<!--   </tr>-->
+<!--  <tr>-->
+<!--    <td><label for="vendor"><b>Vendor</b></label></td>-->
+<!--    <td>-->
+<!--        <select name="vendor" id="vendor">-->
+<!--            {% for vendor in vendors %}-->
+<!--                <option value="{{ vendor.id }}">{{ vendor.name }}</option>-->
+<!--            {% endfor %}-->
+<!--        </select>-->
+<!--    </td>-->
+<!--</tr>-->
+<!--    <tr>-->
+<!--       <td><label for="order_date"><b>Order Date</b></label></td>-->
+<!--        <td><input type="date" placeholder="" name="order_date" ></td><br>-->
+<!--    </tr>-->
+<!--   <tr>-->
+<!--       <td><label for="delevery_date"><b>Delivery Date</b></label></td>-->
+<!--       <td><input type="date" placeholder="" name="delivery_date" ></td><br>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--       <td><label for="items"><b>Items</b></label></td>-->
+<!--       <td><input type="text" placeholder="" name="items" ></td><br>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--       <td><label for="quantitye"><b>Quantity</b></label></td>-->
+<!--       <td><input type="number" placeholder="" name="quantitye" ></td><br>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--       <td><label for="status"><b>Status</b></label></td>-->
+<!--       <td><input type="text" placeholder="" name="status" ></td><br>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--       <td><label for="quality_rating"><b>Quality Rating</b></label></td>-->
+<!--       <td><input type="number" placeholder="" name="quality_rating" ></td><br>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--       <td><label for="issue_date"><b>Issue Date</b></label></td>-->
+<!--       <td><input type="date" placeholder="" name="issue_date" ></td><br>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--       <td><label for="acknowledgment_date"><b>acknowledgment date</b></label></td>-->
+<!--       <td><input type="date" placeholder="" name="acknowledgment_date" ></td><br>-->
+<!--    </tr>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--  -->
+<!--    <div class="logbtn">-->
+<!--        <button class="btn btn-warning"  href=" "type="submit">Submit</button>-->
+<!--    </div>-->
+<!--&lt;!&ndash;      <p> <a  href="{% url 'venapp:list' %}"><button  class="btn btn-warning" type="button">Get started>></button></a></center></p>&ndash;&gt;-->
+
+<!--&lt;!&ndash;  </div>&ndash;&gt;-->
+
+

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<form method="POST" >
+    {% csrf_token %}
+
+ <div class="col-sm-6 mb-3 mb-sm-0">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title"> Are you sure you want to delete this order</h5>
+
+     <button class="btn btn-danger" type="submit">delete</button>
+      </div>
+    </div>
+ </div>
+
+</form>
+{% endblock %}
